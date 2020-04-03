@@ -38,6 +38,24 @@ pipeline {
         }
 
       }
+
+        stage('test app') {
+          options {
+            skipDefaultCheckout true
+          }
+          agent {
+            docker {
+              image 'gradle:jdk11'
+            }
+
+          }
+          steps {
+            unstash 'code'
+
+          }
+        }
+
+      }
     }
 
   }
