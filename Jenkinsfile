@@ -37,8 +37,6 @@ pipeline {
           }
         }
 
-      }
-
         stage('test app') {
           options {
             skipDefaultCheckout true
@@ -51,7 +49,6 @@ pipeline {
           }
           steps {
             unstash 'code'
-
           }
         }
 
